@@ -1036,6 +1036,7 @@ type UpdateDatabaseDdlRequest struct {
 	// For more details, see protobuffer [self
 	// description](https://developers.google.com/protocol-buffers/docs/techniques#self-description).
 	ProtoDescriptors []byte `protobuf:"bytes,4,opt,name=proto_descriptors,json=protoDescriptors,proto3" json:"proto_descriptors,omitempty"`
+	ThroughputMode bool
 }
 
 func (x *UpdateDatabaseDdlRequest) Reset() {
@@ -1096,6 +1097,13 @@ func (x *UpdateDatabaseDdlRequest) GetProtoDescriptors() []byte {
 		return x.ProtoDescriptors
 	}
 	return nil
+}
+
+func (x *UpdateDatabaseDdlRequest) GetThroughputMode() bool {
+	if x != nil {
+		return x.ThroughputMode
+	}
+	return false
 }
 
 // Action information extracted from a DDL statement. This proto is used to

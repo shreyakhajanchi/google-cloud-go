@@ -802,6 +802,7 @@ func (c *DatabaseAdminClient) UpdateDatabaseOperation(name string) *UpdateDataba
 // UpdateDatabaseDdlMetadata.
 // The operation has no response.
 func (c *DatabaseAdminClient) UpdateDatabaseDdl(ctx context.Context, req *databasepb.UpdateDatabaseDdlRequest, opts ...gax.CallOption) (*UpdateDatabaseDdlOperation, error) {
+	println("Throughput mode ",req.ThroughputMode)
 	return c.internalClient.UpdateDatabaseDdl(ctx, req, opts...)
 }
 
